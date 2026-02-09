@@ -49,6 +49,3 @@ export {
   getAllErrors,
   getCustomErrorMessage,
 } from "./helpers/error-handling.js";
-
-// Export test schema for convenience
-export { testSchema } from "./test-schema.js";

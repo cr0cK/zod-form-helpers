@@ -1,21 +1,60 @@
 {
-  "name": "zod-experimentations",
-  "version": "1.0.0",
+  "name": "zod-form-helpers",
+  "version": "0.1.0",
+  "description": "A comprehensive utility library for working with Zod schemas - extract field types, validation rules, generate form inputs, and handle errors",
   "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "test": "vitest run"
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run --reporter=verbose",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm test",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "zod",
+    "validation",
+    "form",
+    "schema",
+    "typescript",
+    "type-detection",
+    "error-handling",
+    "form-generation"
+  ],
+  "author": "Alexis MINEAUD",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cr0cK/zod-form-helpers"
+  },
+  "bugs": {
+    "url": "https://github.com/cr0cK/zod-form-helpers/issues"
+  },
+  "homepage": "https://github.com/cr0cK/zod-form-helpers#readme",
+  "peerDependencies": {
+    "zod": "^3.0.0 || ^4.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
     "@types/node": "^25.2.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
+    "vitest": "^4.0.18",
     "zod": "^4.3.6"
   },
-  "devDependencies": {
-    "vitest": "^4.0.18"
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
